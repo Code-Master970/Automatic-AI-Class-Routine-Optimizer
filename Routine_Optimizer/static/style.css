@@ -309,24 +309,31 @@ nav .nav-btn-logout:hover {
 .days-list {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 30px;
   list-style: none;
   padding: 0;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.days-list li {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 500;
+.days-list li{
+  list-style-type: none;
+  display: flex;
+  
+}
+.days-list li a{
+  text-decoration: none;
+  padding: 17px 22px;
+  font-size: 18px;
+  font-weight: 600;
   background-color: var(--lightheme-color);
-  color: var(--black-color);
+  color: var(--white-color);
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.days-list li.active,
-.days-list li:hover {
+/* .days-list li a.active, */
+.days-list li a:hover {
   background-color: var(--lighthover-color); /* Same yellow shade from the 'Order Online' button */
   color: var(--white-color);
 }
@@ -339,10 +346,11 @@ nav .nav-btn-logout:hover {
   border-radius: 15px; /* Rounded corners */
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+
 }
 
-table {
-  width: 150%;
+.schedule-table table {
+  width: 160%;
   border-collapse: collapse;
   background: white;
   border-radius: 12px;
@@ -352,7 +360,7 @@ table {
 th, td {
   padding: 12px 15px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--black-color);
 }
 
 th {
@@ -364,6 +372,15 @@ th {
 td {
   font-size: 14px;
 }
+
+tr:nth-child(odd) {
+  background-color: #f0f0f0; /* Light row */
+}
+
+tr:nth-child(even) {
+  background-color: #d0d0d0; /* Dark row */
+}
+
 
 tr:hover {
   background-color: #f8f8f8;
@@ -409,10 +426,20 @@ tr:hover {
   font-size: 14px;
 }
 
+tr:nth-child(odd) {
+  background-color: #f0f0f0; /* Light row */
+}
+
+tr:nth-child(even) {
+  background-color: #d0d0d0; /* Dark row */
+}
+
+
 .today-schedule-table tr:hover {
   background-color: #f8f8f8;
   transition: 0.3s;
 }
+
 
 
 /*Footer section code*/
