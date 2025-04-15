@@ -4,7 +4,7 @@ services:
     name: sbh-routine-optimizer
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn Routine_Optimizer.wsgi:application"
+    startCommand: "gunicorn routine_optimizer.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: Routine_Optimizer.settings
+        value: routine_optimizer.settings
