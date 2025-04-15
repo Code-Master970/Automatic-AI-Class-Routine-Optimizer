@@ -9,3 +9,8 @@ sqlparse==0.5.3
 tailwind==3.1.5b0
 tzdata==2025.1
 uv==0.6.4
+
+# Production essentials
+dj-database-url==2.1.0
+whitenoise==6.6.0
+python-dotenv==1.0.1  # optional
