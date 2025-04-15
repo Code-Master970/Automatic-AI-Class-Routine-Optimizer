@@ -10,7 +10,7 @@ body{
 }
 .main{
 	width: 350px;
-	height: 800px;
+	height: 700px;
 	background: red;
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
@@ -23,7 +23,7 @@ body{
 .signup{
 	position: relative;
 	width:100%;
-	height: 110%;
+	height: 85%;
 }
 label{
 	color: #fff;
@@ -67,10 +67,10 @@ button:hover{
 	background: #6d44b8;
 }
 .login{
-	height: 460px;
+	height: 600px;
 	background: #eee;
 	border-radius: 60% / 10%;
-	transform: translateY(-180px);
+	transform: translateY(30px);
 	transition: .8s ease-in-out;
 }
 .login label{
@@ -79,7 +79,7 @@ button:hover{
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-400px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);
@@ -112,4 +112,44 @@ button:hover{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.messages li {
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for different message types */
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
 }
