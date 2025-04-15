@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Routine_Optimizer.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'routine_optimizer.settings')
 
 application = get_wsgi_application()

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-tpl#i*p5-tqc-gqvnpy3)lrjjyjk3i!7!ys-a_dlh@+9l--*+u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Routine_Optimizer.urls'
+ROOT_URLCONF = 'routine_optimizer.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Routine_Optimizer.wsgi.application'
+WSGI_APPLICATION = 'routine_optimizer.wsgi.application'
 
 
 # Database
