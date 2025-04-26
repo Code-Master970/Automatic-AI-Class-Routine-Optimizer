@@ -14,3 +14,5 @@ uv==0.6.4
 dj-database-url==2.1.0
 whitenoise==6.6.0
 python-dotenv==1.0.1  # optional
+daphne>=4.0.0
+

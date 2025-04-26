@@ -2,6 +2,8 @@
 
 {% block title %}Schedules{% endblock title %}
 
+{% block schedule_status %}active{% endblock schedule_status %}
+
 {% block content %}
 <div class="moving-text">
     <div class="scrolling-wrapper">
@@ -68,8 +70,9 @@
                                     {% for s in f.filtered_schedules %}
                                         {% if s.period.id == p.id %}
                                             {{ s.subject.sub_name }}<br>
+                                            {{ s.class_no.class_name }}&nbsp;
                                             {{ s.section.sec_name }}<br>
-                                            {{ s.room.room_no }}
+                                            Room: {{ s.room.room_no }}
                                         {% endif %}
                                     {% endfor %}
                                 </td>

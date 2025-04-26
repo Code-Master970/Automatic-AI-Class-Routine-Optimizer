@@ -26,10 +26,10 @@
             <nav>
                 <a class="logo" href="/">Code <span>Master</span></a>
                 <ul class="navbar-ul">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="/today_schedule">Today's Update</a></li>
+                    <li ><a class="{% block home_status %}{% endblock home_status %}" href="/">Home</a></li>
+                    <li><a class="{% block about_status %}{% endblock about_status %}" href="/about">About Us</a></li>
+                    <li><a class="{% block schedule_status %}{% endblock schedule_status %}" href="/schedule/?day=Monday">Schedule</a></li>
+                    <li><a class="{% block todaySchedule_status %}{% endblock todaySchedule_status %}" href="/today_schedule">Today's Update</a></li>
                 </ul>
 
                 

@@ -4,10 +4,9 @@ from django.contrib.auth.models import User
 #Create your models here
 class Faculty(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=10, unique=True, null=True, blank=True)
-    # password = models.CharField(max_length=128, unique=True)
-    college_id = models.CharField(max_length=10, unique=True)
+    email = models.EmailField( null=True, blank=True)
+    phone_number = models.CharField(max_length=10, null=True, blank=True)
+    college_id = models.CharField(max_length=10, unique=True, null=True, blank=True)
     subject = models.CharField(max_length=20)
     photo = models.ImageField(upload_to='faculty_photos/', null=True, blank=True)
 

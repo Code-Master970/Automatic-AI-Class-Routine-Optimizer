@@ -17,7 +17,7 @@ class class_no(models.Model):
         return self.class_name
 
 class section(models.Model):
-    sec_name = models.CharField(max_length=1, default="A", unique=True)
+    sec_name = models.CharField(max_length=10, default="A", unique=True)
     def __str__(self):
         return self.sec_name
 
@@ -37,7 +37,7 @@ class period(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     period_number = models.IntegerField(null=True, blank=True)
-    is_break = models.BooleanField(default=False) 
+    is_break = models.BooleanField(default=False)
 
     def __str__(self):
         label = "Break" if self.is_break else f"Period {self.period_number}"
@@ -45,12 +45,13 @@ class period(models.Model):
 
 class faculty(models.Model):
     faculty_name = models.CharField(max_length=100)
-    faculty_email = models.EmailField(unique=True)
-    faculty_department = models.CharField(max_length=50)
+    # faculty_email = models.EmailField(unique=True)
+    # faculty_department = models.CharField(max_length=50)
+    college_id = models.CharField(max_length=25,default='DSC-1000')
     subjects = models.ManyToManyField('subject', related_name='faculties')
 
     def __str__(self):
-        return f"{self.faculty_name} ({self.faculty_department})"
+        return f"{self.faculty_name} ({self.college_id})"
 
 from django.core.exceptions import ValidationError
 
@@ -62,8 +63,8 @@ class schedule(models.Model):
     class_no = models.ForeignKey('class_no', on_delete=models.CASCADE, null=True, blank=True)
     section = models.ForeignKey('section', on_delete=models.CASCADE)
     room = models.ForeignKey('room', on_delete=models.CASCADE)
-    is_lab = models.BooleanField(default=False)
-    active = models.BooleanField(default=True)
+    is_lab = models.BooleanField(default=False) #for lab
+    active = models.BooleanField(default=False)
 
     class Meta:
         unique_together = [

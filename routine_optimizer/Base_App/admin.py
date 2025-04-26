@@ -31,12 +31,12 @@ class PeriodsAdmin(admin.ModelAdmin):
 
 @admin.register(faculty)
 class FacultyAdmin(admin.ModelAdmin):
-    list_display = ('faculty_name', 'faculty_department', 'faculty_email')
-    search_fields = ('faculty_name', 'faculty_email', 'faculty_department')
+    list_display = ('faculty_name',  'college_id')
+    search_fields = ('faculty_name', 'college_id')
     filter_horizontal = ('subjects',)
 
 @admin.register(schedule)
 class ScheduleAdmin(admin.ModelAdmin):
     list_display = ('faculty', 'day', 'period', 'subject', 'section', 'room')
-    list_filter = ('day', 'faculty__faculty_department')
+    list_filter = ('day',)
     search_fields = ('faculty__faculty_name', 'subject__sub_name')
