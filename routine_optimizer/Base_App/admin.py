@@ -34,9 +34,10 @@ class FacultyAdmin(admin.ModelAdmin):
     list_display = ('faculty_name',  'college_id')
     search_fields = ('faculty_name', 'college_id')
     filter_horizontal = ('subjects',)
+    
 
 @admin.register(schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ('faculty', 'day', 'period', 'subject', 'section', 'room')
+    list_display = ('faculty', 'day', 'period', 'subject', 'class_no','section', 'room')
     list_filter = ('day',)
     search_fields = ('faculty__faculty_name', 'subject__sub_name')

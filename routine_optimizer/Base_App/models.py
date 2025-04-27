@@ -69,7 +69,6 @@ class schedule(models.Model):
     class Meta:
         unique_together = [
             ('faculty', 'day', 'period'),
-            ('section', 'day', 'period'),
             ('room', 'day', 'period')
         ]
         ordering = ['day', 'period']
