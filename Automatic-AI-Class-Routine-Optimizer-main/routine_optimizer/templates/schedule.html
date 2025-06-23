@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Schedules{% endblock title %}
+
+{% block schedule_status %}active{% endblock schedule_status %}
+
+{% block content %}
+<div class="moving-text">
+    <div class="scrolling-wrapper">
+        <p>
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Check the <a href="/today_schedule">Today's Update</a> for the latest Schedule
+        </p>
+    </div>
+</div>
+
+<section class="schedule-section">
+    <div class="schedule-head">
+        <h1>Our Schedules</h1>
+        <p>Total faculties: {{ faculties|length }}</p>
+    </div>
+
+    <div class="day-btns">
+        <ul class="days-list">
+            {% for d in days %}
+                <li>
+                    <a href="?day={{ d }}" class="{% if d == selected_day %}active{% endif %}">
+                        {{ d }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <!-- Schedule Table -->
+    <div class="today-schedule-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Faculty Name</th>
+                    {% for p in periods %}
+                        <th>{{ p.start_time|time:"H:i" }} - {{ p.end_time|time:"H:i" }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for f in faculties %}
+                    <tr>
+                        <td>{{ f.faculty_name }}</td>
+                        {% for p in periods %}
+                            {% if p.is_break %}
+                                {% if forloop.parentloop.first %}
+                                    <td rowspan="{{ faculties|length }}" style="background: #b7b7b3; font-size: 40px; font-weight: bold; text-align: center;">Break</td>
+                                {% endif %}
+                            {% else %}
+                                <td>
+                                    {% for s in f.filtered_schedules %}
+                                        {% if s.period.id == p.id %}
+                                            {{ s.subject.sub_name }}<br>
+                                            {{ s.class_no.class_name }}&nbsp;
+                                            {{ s.section.sec_name }}<br>
+                                            Room: {{ s.room.room_no }}
+                                            
+                                        {% endif %}
+                                        
+                                    {% endfor %}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock content %}

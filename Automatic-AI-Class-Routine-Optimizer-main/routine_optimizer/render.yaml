@@ -1,0 +1,10 @@
+# render.yaml
+services:
+  - type: web
+    name: sbh-routine-optimizer
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn routine_optimizer.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: routine_optimizer.settings
